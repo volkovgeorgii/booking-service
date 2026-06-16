@@ -27,10 +27,14 @@ public class IdempotencyService {
     private final StringRedisTemplate redisTemplate;
 
     public Optional<ReservationResponse> findCached(String key, String operation) {
-        String redisKey = REDIS_PREFIX + operation + ":" + key;
-        String cached = redisTemplate.opsForValue().get(redisKey);
-        if (cached != null) {
-            return Optional.of(deserialize(cached));
+        try {
+            String redisKey = REDIS_PREFIX + operation + ":" + key;
+            String cached = redisTemplate.opsForValue().get(redisKey);
+            if (cached != null) {
+                return Optional.of(deserialize(cached));
+            }
+        } catch (Exception e) {
+            // Redis недоступен, проверим в БД
         }
         return Optional.empty();
     }

@@ -26,6 +26,7 @@ public class EventController {
 
     @GetMapping("/{id}/availability")
     public AvailabilityResponse getAvailability(@PathVariable UUID id) {
+
         return eventService.getAvailability(id);
     }
 }
