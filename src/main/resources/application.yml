@@ -106,6 +106,3 @@ booking:
     ttl-ms: 10000
   expiry:
     check-interval-ms: 30000
-  rate:
-    global-capacity: 50000
-    per-ip-capacity: 500

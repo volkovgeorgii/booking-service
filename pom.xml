@@ -21,7 +21,6 @@
         <java.version>25</java.version>
         <testcontainers.version>1.20.3</testcontainers.version>
         <resilience4j.version>2.2.0</resilience4j.version>
-        <bucket4j.version>8.10.1</bucket4j.version>
     </properties>
 
     <dependencies>
@@ -70,15 +69,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.bucket4j</groupId>
-            <artifactId>bucket4j-core</artifactId>
-            <version>${bucket4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.ben-manes.caffeine</groupId>
-            <artifactId>caffeine</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
